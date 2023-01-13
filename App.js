@@ -1,5 +1,14 @@
 // text and view are core compnents
-import { StyleSheet, Text, View, Button, TextInput } from "react-native";
+// ScrollView allows you to create scrolable list or text
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  TextInput,
+  // ScrollView,
+  FlatList,
+} from "react-native";
 // import useState hook
 import { useState } from "react";
 // regular functioanal component,  App is root component
@@ -28,7 +37,10 @@ export default function App() {
     // create a new array and use spread operator to spread my existing skills and add a new skill
     // setSkills([...skills, enteredSkillText]);
     // second way for updating
-    setSkills((currentSkills) => [...currentSkills, enteredSkillText]);
+    setSkills((currentSkills) => [
+      ...currentSkills,
+      { text: enteredSkillText, id: Math.random().toString() },
+    ]);
   }
   return (
     <View style={styles.appContainer}>
@@ -43,11 +55,28 @@ export default function App() {
         <Button title="Add Skill" onPress={addSkillsHandler} />
       </View>
       <View style={styles.skillssContainer}>
-        {skills.map((skill) => (
-          <View style={styles.skillItem} key={skill}>
-            <Text style={styles.skillItemText}>{skill}</Text>
-          </View>
-        ))}
+        {/* <ScrollView>
+          {skills.map((skill) => (
+            <View style={styles.skillItem}>
+              <Text style={styles.skillItemText} key={skill.id}>
+                {skill}
+              </Text>
+            </View>
+          ))}
+        </ScrollView> */}
+        <FlatList
+          data={skills}
+          renderItem={(itemData) => {
+            return (
+              <View style={styles.skillItem}>
+                <Text style={styles.skillItemText}>{itemData.item.text}</Text>
+              </View>
+            );
+          }}
+          keyExtractor={(item, index) => {
+            return item.id;
+          }}
+        />
       </View>
     </View>
   );
