@@ -26,7 +26,9 @@ export default function App() {
     // it will reach the state
     console.log(enteredSkillText);
     // create a new array and use spread operator to spread my existing skills and add a new skill
-    setSkills([...skills, enteredSkillText]);
+    // setSkills([...skills, enteredSkillText]);
+    // second way for updating
+    setSkills((currentSkills) => [...currentSkills, enteredSkillText]);
   }
   return (
     <View style={styles.appContainer}>
@@ -40,8 +42,12 @@ export default function App() {
         />
         <Button title="Add Skill" onPress={addSkillsHandler} />
       </View>
-      <View style={styles.goalsContainer}>
-        <Text>List of skills...</Text>
+      <View style={styles.skillssContainer}>
+        {skills.map((skill) => (
+          <View style={styles.skillItem} key={skill}>
+            <Text style={styles.skillItemText}>{skill}</Text>
+          </View>
+        ))}
       </View>
     </View>
   );
@@ -74,7 +80,16 @@ const styles = StyleSheet.create({
     marginRight: 8,
     padding: 8,
   },
-  goalsContainer: {
+  skillssContainer: {
     flex: 4,
+  },
+  skillItem: {
+    margin: 8,
+    padding: 8,
+    borderRadius: 5,
+    backgroundColor: "#6e0aff",
+  },
+  skillItemText: {
+    color: "white",
   },
 });
