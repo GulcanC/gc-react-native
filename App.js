@@ -1,15 +1,35 @@
-import { StatusBar } from "expo-status-bar";
-
-// text and wiev are core compnents
+// text and view are core compnents
 import { StyleSheet, Text, View, Button, TextInput } from "react-native";
-
+// import useState hook
+import { useState } from "react";
 // regular functioanal component,  App is root component
+
 export default function App() {
+  // store the state, initially empty string.
+  // the state is updated with every keystroke in the skillInputHandler() and we will use it in the addSkilsHandler()
+  const [enteredSkillText, setEnteredSkillText] = useState("");
+  // add a function that is called skillsInputHandler that is responsable for fetching that user input as the user types
+  // to use these function we use special events listining props that are provided by React Native on its components
+  // to connect skillsInputHandler function to text input we use special event listening prop onChangeText() prop.
+
+  function skillsInputHandler(enteredText) {
+    console.log(enteredText);
+  }
+  // this function addSkillsHandler() which should be fired when this button here is clicked
+  // in this function we will receive the value automatically
+
+  function addSkillsHandler() {}
   return (
     <View style={styles.appContainer}>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.textInput} placeholder="Your skills!" />
-        <Button title="Add Skill" />
+        <TextInput
+          style={styles.textInput}
+          placeholder="Your skills!"
+          // here we do not add parenthesis this means we do not execute this function here
+          // I want that this function execute when text changes in textInput
+          onChangeText={skillsInputHandler}
+        />
+        <Button title="Add Skill" onPress={addSkillsHandler} />
       </View>
       <View style={styles.goalsContainer}>
         <Text>List of skills...</Text>
@@ -21,7 +41,7 @@ export default function App() {
 // style sheet object
 const styles = StyleSheet.create({
   appContainer: {
-    backgroundColor: "",
+    backgroundColor: "#DAD5EE",
     flex: 1,
     padding: 50,
     paddingHorizontal: 16,
@@ -34,13 +54,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 24,
-    borderBottomWidth: 1,
-    borderBottomColor: "blue",
+    borderBottomWidth: 2,
+    borderBottomColor: "#311B92",
   },
 
   textInput: {
-    borderWidth: 1,
-    borderColor: "blue",
+    borderWidth: 2,
+    borderColor: "#311B92",
     width: "70%",
     marginRight: 8,
     padding: 8,
