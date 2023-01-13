@@ -8,17 +8,26 @@ export default function App() {
   // store the state, initially empty string.
   // the state is updated with every keystroke in the skillInputHandler() and we will use it in the addSkilsHandler()
   const [enteredSkillText, setEnteredSkillText] = useState("");
+  // create other state to manage list of skills, it will be initially an empty array
+  const [skills, setSkills] = useState([]);
   // add a function that is called skillsInputHandler that is responsable for fetching that user input as the user types
   // to use these function we use special events listining props that are provided by React Native on its components
   // to connect skillsInputHandler function to text input we use special event listening prop onChangeText() prop.
 
   function skillsInputHandler(enteredText) {
+    // initially it is empty but it will be updated
+    setEnteredSkillText(enteredText);
     console.log(enteredText);
   }
   // this function addSkillsHandler() which should be fired when this button here is clicked
   // in this function we will receive the value automatically
 
-  function addSkillsHandler() {}
+  function addSkillsHandler() {
+    // it will reach the state
+    console.log(enteredSkillText);
+    // create a new array and use spread operator to spread my existing skills and add a new skill
+    setSkills([...skills, enteredSkillText]);
+  }
   return (
     <View style={styles.appContainer}>
       <View style={styles.inputContainer}>
