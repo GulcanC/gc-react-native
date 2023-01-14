@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, View, TextInput, Button, Modal } from "react-native";
+import {
+  StyleSheet,
+  View,
+  TextInput,
+  Button,
+  Modal,
+  Image,
+} from "react-native";
 import { useState } from "react";
 const SkillInput = (props) => {
   // store the state, initially empty string.
@@ -22,7 +29,7 @@ const SkillInput = (props) => {
   return (
     <Modal visible={props.visible} animationType="slide">
       <View style={styles.inputContainer}>
-        <Image source={ } />
+        <Image style={styles.image} source={require("../assets/image.png")} />
         <TextInput
           style={styles.textInput}
           placeholder="Your skills!"
@@ -68,6 +75,7 @@ const styles = StyleSheet.create({
     width: "70%",
     padding: 8,
     borderRadius: 5,
+    backgroundColor: "#DAD5EE",
   },
 
   buttonContainer: { flexDirection: "column", marginTop: 16 },
@@ -78,5 +86,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#6e0aff",
     marginBottom: 8,
     borderRadius: 5,
+  },
+
+  image: {
+    width: 100,
+    height: 100,
+    marginBottom: 50,
+    borderRadius: "50%",
   },
 });

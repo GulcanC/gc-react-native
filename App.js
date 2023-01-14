@@ -6,8 +6,9 @@ import {
   // ScrollView,
   FlatList,
   Button,
-  Image,
 } from "react-native";
+
+import { StatusBar } from "expo-status-bar";
 // import useState hook
 import { useState } from "react";
 // regular functioanal component,  App is root component
@@ -56,37 +57,40 @@ export default function App() {
   }
 
   return (
-    <View style={styles.appContainer}>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Add new skill"
-          color="white"
-          onPress={startAddSkillHandler}
+    <>
+      <StatusBar style="dark" />
+      <View style={styles.appContainer}>
+        <View style={styles.buttonContainer}>
+          <Button
+            title="Add new skill"
+            color="white"
+            onPress={startAddSkillHandler}
+          />
+        </View>
+        <SkillInput
+          visible={modalIsVisible}
+          onAddSkill={addSkillsHandler}
+          onCancel={endAddSkillHandler}
         />
+        <View style={styles.skillssContainer}>
+          <FlatList
+            data={skills}
+            renderItem={(itemData) => {
+              return (
+                <SkillItem
+                  text={itemData.item.text}
+                  id={itemData.item.id}
+                  onDeleteItem={deleteSkillHandler}
+                />
+              );
+            }}
+            keyExtractor={(item, index) => {
+              return item.id;
+            }}
+          />
+        </View>
       </View>
-      <SkillInput
-        visible={modalIsVisible}
-        onAddSkill={addSkillsHandler}
-        onCancel={endAddSkillHandler}
-      />
-      <View style={styles.skillssContainer}>
-        <FlatList
-          data={skills}
-          renderItem={(itemData) => {
-            return (
-              <SkillItem
-                text={itemData.item.text}
-                id={itemData.item.id}
-                onDeleteItem={deleteSkillHandler}
-              />
-            );
-          }}
-          keyExtractor={(item, index) => {
-            return item.id;
-          }}
-        />
-      </View>
-    </View>
+    </>
   );
 }
 
