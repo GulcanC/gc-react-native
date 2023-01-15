@@ -1,12 +1,6 @@
 // text and view are core compnents
 // ScrollView allows you to create scrolable list or text
-import {
-  StyleSheet,
-  View,
-  // ScrollView,
-  FlatList,
-  Button,
-} from "react-native";
+import { StyleSheet, View, FlatList, Button } from "react-native";
 
 import { StatusBar } from "expo-status-bar";
 // import useState hook
