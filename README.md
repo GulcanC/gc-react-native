@@ -1,4 +1,4 @@
-# REACT NATIVE APP
+# 🛑 REACT NATIVE APP
 
 ![image](https://user-images.githubusercontent.com/80323415/212573411-b6437de6-2086-47eb-b290-d69938a6d9b1.png)
 
@@ -7,4 +7,11 @@
 
 This is a small project created with react native. 
 
+
+# 🛑 GETTING STARTED
+
+## Prerequisites
+1) Git
+2) Node
+3) Expo
 
