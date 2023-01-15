@@ -8,26 +8,6 @@
 This is a small project created with react native. 
 
 
-# 🛑 GETTING STARTED
 
-## Prerequisites
-1) Git
-2) Node
-3) Expo
-
-
-:star: Clone the repository
-
-git clone https://github.com/GulcanC/gc-react-native.git
-
-
-
-
-
-Install dependencies
-
-npm install
-
-## 
 
 
