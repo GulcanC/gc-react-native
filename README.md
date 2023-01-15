@@ -15,3 +15,19 @@ This is a small project created with react native.
 2) Node
 3) Expo
 
+
+:star: Clone the repository
+
+git clone https://github.com/GulcanC/gc-react-native.git
+
+
+
+
+
+Install dependencies
+
+npm install
+
+## 
+
+
