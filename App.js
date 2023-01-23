@@ -14,7 +14,7 @@ export default function App() {
   const [skills, setSkills] = useState([]);
   const [modalIsVisible, setModalIsVisible] = useState(false);
 
-  // create modal function
+  // create modal function to open modal
 
   function startAddSkillHandler() {
     setModalIsVisible(true);

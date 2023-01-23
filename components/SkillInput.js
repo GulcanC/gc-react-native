@@ -8,6 +8,7 @@ import {
   Image,
 } from "react-native";
 import { useState } from "react";
+
 const SkillInput = (props) => {
   // store the state, initially empty string.
   // the state is updated with every keystroke in the skillInputHandler() and we will use it in the addSkilsHandler()
