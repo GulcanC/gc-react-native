@@ -8,7 +8,7 @@
 This is a small project created with react native. 
 
 
-![gif](https://user-images.githubusercontent.com/80323415/react native gif.gif)
+![gif](https://github.com/GulcanC/gc-react-native/blob/main/react%20native%20gif.gif)
 
 
 
