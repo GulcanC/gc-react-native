@@ -8,7 +8,7 @@
 This is a small project created with react native. 
 
 
-![Uploading react native gif.gif…]()
+![](react native gif.gif)
 
 
 
