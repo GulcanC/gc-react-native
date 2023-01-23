@@ -4,7 +4,7 @@
 This is a small project created with react native. 
 
 
-![gif](https://github.com/GulcanC/gc-react-native/blob/main/react%20native%20gif.gif=100x100)
+![gif](https://github.com/GulcanC/gc-react-native/blob/main/react%20native%20gif.gif | width=100)
 
 ![image](https://user-images.githubusercontent.com/80323415/212573411-b6437de6-2086-47eb-b290-d69938a6d9b1.png)
 
