@@ -8,7 +8,7 @@
 This is a small project created with react native. 
 
 
-![](react native gif.gif)
+![gif](react native gif.gif)
 
 
 
